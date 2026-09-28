@@ -1,0 +1,97 @@
+/* 기본 스타일 */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0F0F12;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E10600; /* F1 레드 */
+    padding: 15px 30px;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 페이지 전환 애니메이션 (동적 변화) */
+.page {
+    display: none;
+    padding: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 드라이버 카드 (마우스 호버 및 아코디언 애니메이션) */
+.driver-card {
+    background: #1F1F24;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.driver-card:hover {
+    transform: scale(1.02);
+    background: #E10600;
+}
+
+.details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+.driver-card.open .details {
+    max-height: 100px;
+}
+
+/* 게시판 스타일 */
+.crud-form input {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.crud-form button {
+    padding: 10px 20px;
+    background: #E10600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.post-item {
+    background: #2a2a35;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.post-actions button {
+    margin-left: 5px;
+    cursor: pointer;
+}

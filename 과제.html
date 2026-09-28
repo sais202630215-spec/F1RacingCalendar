@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Racing Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2 class="logo">F1 Racing Calendar</h2>
+        <ul>
+            <li><a href="#" onclick="navigate('home')">Home</a></li>
+            <li><a href="#" onclick="navigate('drivers')">Drivers</a></li>
+            <li><a href="#" onclick="navigate('board')">Fan Board</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- 1. Home 페이지 -->
+        <section id="home" class="page active">
+            <h1 class="main-title">F1 Racing Calendar</h1>
+            <p>가장 빠른 스피드, 다음 레이스를 준비하세요!</p>
+            <div class="countdown-box" id="countdown">D-Day 계산 중...</div>
+        </section>
+
+        <!-- 2. Drivers 페이지 (아코디언 애니메이션) -->
+        <section id="drivers" class="page">
+            <h2>Drivers & Teams</h2>
+            <div class="driver-card" onclick="toggleDriverDetails(this)">
+                <h3>Max Verstappen (Red Bull)</h3>
+                <div class="details">포인트: 400+ | 우승 횟수: 3회 월드 챔피언</div>
+            </div>
+            <div class="driver-card" onclick="toggleDriverDetails(this)">
+                <h3>Lewis Hamilton (Ferrari)</h3>
+                <div class="details">포인트: 300+ | 우승 횟수: 7회 월드 챔피언</div>
+            </div>
+        </section>
+
+        <!-- 3. Fan Board 페이지 (CRUD 게시판) -->
+        <section id="board" class="page">
+            <h2>Fan Board</h2>
+            <div class="crud-form">
+                <input type="text" id="author" placeholder="이름">
+                <input type="text" id="content" placeholder="응원 메시지를 남겨주세요">
+                <button onclick="addPost()">등록하기</button>
+            </div>
+            <div id="post-list"></div>
+        </section>
+    </main>
+
+    <!-- 자바스크립트 연결 (HTML 하단에 배치) -->
+    <script src="app.js"></script>
+</body>
+</html>
